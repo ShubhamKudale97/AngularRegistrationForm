@@ -1,0 +1,16 @@
+<p>checkbox works!</p>
+<div class="">
+    <form (ngSubmit)="submitForm()" [formGroup]="checkboxForm">
+    <label for="lang">Select languages</label> <br/>
+    <input type="checkbox"  formControlName="language" id="idmarathi"value="Marathi" > 
+    <label for="idmarathi">Marathi</label><br/>
+    <input type="checkbox" formControlName="language" id="idhindi" value="Hindi"> 
+    <label for="idhindi">Hindi</label><br/>
+    <input type="checkbox" formControlName="language" id="idenglish" value="English">
+    <label for="idenglish">English</label> <br/>
+    <input type="checkbox" formControlName="language" id="idtamil" value="Tamil">
+    <label for="idtamil">Tamil</label>
+    <br/>
+    <input type="submit" value="Submit" >
+    </form>
+</div>

@@ -1,0 +1,48 @@
+<!-- <input type="button" value="Home" (click)="login()"> -->
+
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container h-100">
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <h3> Login </h3>
+            </div>
+        </div>
+        <div class=" card justify-center p-4">
+            <form [formGroup]="login_form" (ngSubmit)="login()">
+                <div class="row"></div>
+                <div class="row pt-4">
+                    <div class="col-lg-6 text-center"><label>Enter Username</label></div>
+                    <div class="col-lg-4">
+                        <input type="text" class="form-control" placeholder="Enter Email as Username" formControlName="username" 
+                        required [ngClass] = "{'is-invalid': username.invalid && username.touched , 'is-valid': username.valid}"
+                        />
+                        <label class="form-label text-danger" for="form3Example1c" *ngIf="username.invalid && username.touched
+                        && username.errors?.['required']">user name is required</label>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-lg-6 text-center"><label>Enter Password</label></div>
+                    <div class="col-lg-4">
+                        <input type="password" class="form-control" formControlName="password" required 
+                        [ngClass] = "{'is-invalid': password.invalid && password.touched , 'is-valid': password.valid}"
+                        /> 
+                        <label class="form-label text-danger" for="form3Example1c" *ngIf="password.invalid && password.touched
+                        && password.errors?.['required']">password is required</label>
+                    </div>
+                </div>
+                <div class="row pt-4">
+                    <div class="col-lg-6 text-center"><input type="submit"></div>
+                    <div class="col-lg-6  text-center"><input type="reset"></div>
+                </div>
+            </form>
+        </div>
+        <br />
+        <!-- <div class="row text-center">
+            <div class="col-lg-12 ">
+                <div class="card text-center">
+                    test
+                </div>
+            </div>
+        </div> -->
+    </div>
+</section>

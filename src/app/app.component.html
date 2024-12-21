@@ -1,0 +1,169 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/dashboard']">Dashboard</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Sign-up / Login
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" [routerLink]="['/insertdata']">Sign up</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/login']">Login</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/contactus']">Contact us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/aboutus']">About us</a>
+        </li>
+      </ul>
+      <!-- <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+
+
+<!--  <form (ngSubmit)="submitData(myform)" #myform>
+  <input type="text" placeholder="Enter Name" (input)="name.value"
+  value="I am Template"
+  #name> 
+  {{name.value}}
+  
+  <br><br>
+  <input type="text" placeholder="Enter surname" #srname>
+  {{srname}} <br><br>
+
+  <input type="button"  (click)="name"  /> 
+</form  >
+
+ [(ngModel)]="name1" 
+
+<section class= "vh-100" style= "background-color: azure;">
+  <div class="container h-100">
+    <div class="row text-center">
+      <div class="col"-lg-12> <label>Registration Form</label></div>
+      <div class=""></div>
+    </div>
+  </div>
+</section> 
+
+<h1>Http Client project runing</h1> -->
+
+
+<!-- <form (ngSubmit)="submitData(myform.control.value)" #myform="ngForm">
+<section class="vh-100" style="background-color: #afcaed;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-9">
+        <h1 class="text-black mb-4">Registration Form</h1>
+        <div class="card" style="border-radius: 15px;">
+          <div class="card-body">
+            <div class="row align-items-center pt-4 pb-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Full name</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input  type="text" id="idname" ngModel name="fullname" #refname="ngModel" required="required" class="form-control form-control-lg" pattern="[A-Z\sa-z]+"
+                [ngClass]="{'is-invalid': refname.invalid && refname.touched , 'is-valid':refname.valid}" />
+                <label for="idname" class="form-label text-danger" *ngIf="refname.invalid && refname.touched && refname.errors['required']"> insert User name</label>
+                <label for="idname" class="form-label text-danger" *ngIf="refname.invalid && refname.touched && refname.errors['pattern']"> insert valid user name</label>
+              </div>
+            </div>
+            <hr class="mx-n3">
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Email address</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input ngModel id="idemail" type="email" name="emailid" #refemail="ngModel" required="required" class="form-control form-control-lg" pattern="" 
+                [ngClass]="{'is-invalid': refemail.invalid && refemail.touched , 'is-valid':refemail.valid}" placeholder="example@example.com"/> 
+                <label for="idemail" class="form-label text-danger" *ngIf="refemail.invalid && refemail.touched && refemail.errors['required']"> insert email id</label>
+                <label for="idemail" class="form-label text-danger" *ngIf="refemail.invalid && refemail.touched && refemail.errors['pattern']"> insert valid email id</label>
+              </div>
+            </div>
+            <hr class="mx-n3">
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">mobile Number</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input ngModel id="idmob" type="tel" name="telino" #refmob="ngModel" required="required"class="form-control form-control-lg " pattern="^[1-9]{1}[0-9]{9}$" 
+                [ngClass]="{'is-invalid': refmob.invalid && refmob.touched , 'is-valid':refmob.valid}"/>
+                <label for="idmob" class="form-label text-danger" *ngIf="refmob.invalid && refmob.touched && refmob.errors['required']"> insert mobile number</label>
+                <label for="idmob" class="form-label text-danger" *ngIf="refmob.invalid && refmob.touched && refmob.errors['pattern']"> insert valid mobile number</label>
+              </div>
+            </div>
+            <hr class="mx-n3">
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Adhar card Number</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input ngModel id="idadhar" type="text" name="adhar" #refadhar="ngModel" required="required" class="form-control form-control-lg" pattern="^[2-9]{1}[0-9]{3}\s[0-9]{4}\s[0-9]{4}$" 
+                [ngClass]="{'is-invalid': refadhar.invalid && refadhar.touched , 'is-valid':refadhar.valid}" placeholder="Add space after enter 4 digits" />
+                <label for="idadhar" class="form-label text-danger" *ngIf="refadhar.invalid && refadhar.touched && refadhar.errors['required']"> insert adhar number</label>
+                <label for="idadhar" class="form-label text-danger" *ngIf="refadhar.invalid && refadhar.touched && refadhar.errors['pattern']"> insert valid adhar number</label>
+              </div>
+            </div>
+            <hr class="mx-n3">
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Pan card Number</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input ngModel id="idpan" type="text" name="pan" #refpan="ngModel" required="required" class="form-control form-control-lg" pattern="^[2-9]{1}[0-9]{3}\s[0-9]{4}\s[0-9]{4}$" 
+                [ngClass]="{'is-invalid': refpan.invalid && refpan.touched , 'is-valid':refpan.valid}"/> 
+                <label for="idpan" class="form-label text-danger" *ngIf="refpan.invalid && refpan.touched && refpan.errors['required']"> insert pan number</label>
+                <label for="idpan" class="form-label text-danger" *ngIf="refpan.invalid && refpan.touched && refpan.errors['pattern']"> insert valid pan number</label>
+              </div>
+            </div>
+            <hr class="mx-n3">
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Full name</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <textarea class="form-control" rows="3" placeholder="Message sent to the employer"></textarea>
+              </div>
+            </div>
+            <hr class="mx-n3">
+            <div class="row align-items-center py-3">
+              <div class="col-md-3 ps-5">
+                <h6 class="mb-0">Upload CV</h6>
+              </div>
+              <div class="col-md-9 pe-5">
+                <input class="form-control form-control-lg" id="formFileLg" type="file" />
+                <div class="small text-muted mt-2">Upload your CV/Resume or any other relevant file. Max file
+                  size 50 MB</div>
+              </div>
+            </div>
+            <hr class="mx-n3">
+            <div class="px-5 py-4">
+              <input type="submit" class="btn btn-primary btn-lg" value="send application">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</form> -->

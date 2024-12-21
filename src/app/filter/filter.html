@@ -1,0 +1,17 @@
+<div class="btn-group shadow-0 p-2">
+  <input type="radio" class="btn-check btn-light" name="gender" id="idall" value="all"
+  [(ngModel)]="selectedRadioBtn" (change)="onFilterChange()" />
+  <label class="btn btn-secondary btn-light" for="idall">All</label>
+
+  <input type="radio" class="btn-check btn-light" name="gender" id="idmale" value="male"
+  [(ngModel)]="selectedRadioBtn" (change)="onFilterChange()" />
+  <label class="btn btn-secondary btn-light" for="idmale">Male</label>
+
+  <input type="radio" class="btn-check btn-light" name="gender" id="idfemale" value="female"
+  [(ngModel)]="selectedRadioBtn" (change)="onFilterChange()" />
+  <label class="btn btn-secondary btn-light" for="idfemale">Female</label>
+
+  <input type="radio" class="btn-check btn-light" name="gender" id="idother" value="other"
+  [(ngModel)]="selectedRadioBtn" (change)="onFilterChange()" />
+  <label class="btn btn-secondary btn-light" for="idother">Other</label>
+</div>

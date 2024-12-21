@@ -1,0 +1,250 @@
+<!-- <p>insertdata works!</p>
+<div>
+<form (ngSubmit)="submitData(myform.control.value)" #myform="ngForm">
+    <div class="row pt-4" > <label for="idname"> Name:- </label> </div>
+    <div class="row pt-4"> <input  type="text" id="idname" ngModel name="first_name" #refname="ngModel" required="required" class="form-control" pattern="[A-Za-z]+"
+    [ngClass]="{'is-invalid': refname.invalid && refname.touched , 'is-valid':refname.valid}" /> </div>
+    <label for="idname" class="form-label text-danger" *ngIf="refname.invalid && refname.touched && refname.errors['required']"> insert User name</label>
+    <label for="idname" class="form-label text-danger" *ngIf="refname.invalid && refname.touched && refname.errors['pattern']"> insert valid user name</label> <br>
+    
+    <label for="dob">Date of Birth:- </label>
+    <input ngModel type="text" name="dob" /> <br>
+
+    <label for="idemail">email:- </label>
+    <input ngModel id="idemail" type="email" name="emailid" #refemail="ngModel" required="required" class="form-control" pattern=""
+    [ngClass]="{'is-invalid': refemail.invalid && refemail.touched , 'is-valid':refemail.valid}" /> 
+    <label for="idemail" class="form-label text-danger" *ngIf="refemail.invalid && refemail.touched && refemail.errors['required']"> insert email id</label>
+    <label for="idemail" class="form-label text-danger" *ngIf="refemail.invalid && refemail.touched && refemail.errors['pattern']"> insert valid email id</label> <br>
+    
+    <label for="idmob">mob:- </label>
+    <input ngModel id="idmob" type="tel" name="telino" #refmob="ngModel" required="required"class="form-control" pattern="^[1-9]{1}[0-9]{9}$" 
+    [ngClass]="{'is-invalid': refmob.invalid && refmob.touched , 'is-valid':refmob.valid}"/>
+    <label for="idmob" class="form-label text-danger" *ngIf="refmob.invalid && refmob.touched && refmob.errors['required']"> insert mobile number</label>
+    <label for="idmob" class="form-label text-danger" *ngIf="refmob.invalid && refmob.touched && refmob.errors['pattern']"> insert valid mobile number</label> <br>
+    
+    <label for="idadhar">Adhar Card:- </label>
+    <input ngModel id="idadhar" type="text" name="adhar" #refadhar="ngModel" required="required" class="form-control" pattern="^[2-9]{1}[0-9]{3}\s[0-9]{4}\s[0-9]{4}$" 
+    [ngClass]="{'is-invalid': refadhar.invalid && refadhar.touched , 'is-valid':refadhar.valid}" placeholder="Add space after enter 4 digits" />
+    <label for="idadhar" class="form-label text-danger" *ngIf="refadhar.invalid && refadhar.touched && refadhar.errors['required']"> insert adhar number</label>
+    <label for="idadhar" class="form-label text-danger" *ngIf="refadhar.invalid && refadhar.touched && refadhar.errors['pattern']"> insert valid adhar number</label> <br>
+    
+    <label for="idpan">Pan Card:- </label>
+    <input ngModel id="idpan" type="text" name="pan" #refpan="ngModel" required="required" class="form-control" pattern="^[2-9]{1}[0-9]{3}\s[0-9]{4}\s[0-9]{4}$" 
+    [ngClass]="{'is-invalid': refpan.invalid && refpan.touched , 'is-valid':refpan.valid}"/> 
+    <label for="idpan" class="form-label text-danger" *ngIf="refpan.invalid && refpan.touched && refpan.errors['required']"> insert pan number</label>
+    <label for="idpan" class="form-label text-danger" *ngIf="refpan.invalid && refpan.touched && refpan.errors['pattern']"> insert valid pan number</label> <br>
+    
+    <label for="password">password :-</label> <input type="password" name="password" #pass required="required">
+    <label for="cpassword">confirm password :- </label> <input type="password" name="cpassword" #cpass required="required"> <br><br>
+    <div *ngIf= "pass.value!=cpass.value" class="form-label text-danger">Password is not matching plz ReEnter</div>
+    <input type="submit" value="submit">
+</form> 
+</div> -->
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+
+                        <form (ngSubmit)="submitData(myform.control.value)" #myform="ngForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" placeholder="First Name" id="idfirstname" ngModel
+                                            name="first_name" #refname="ngModel" required="required"
+                                            class="form-control form-control-lg" 
+                                            [ngClass]="{'is-invalid': refname.invalid && refname.touched , 'is-valid':refname.valid}" />
+                                        <label for="idfirstname" class="form-label text-danger"
+                                            *ngIf="refname.invalid && refname.touched && refname.errors['required']">
+                                            Enter First name</label>
+                                        <label for="idfirstname" class="form-label text-danger"
+                                            *ngIf="refname.invalid && refname.touched && refname.errors[pattern]">
+                                            Enter valid first name</label>
+                                            <label for="idfirstname" 
+                                            *ngIf="refname.invalid && refname.touched && refname.errors[pattern1]">
+                                            Enter valid name</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="text" placeholder="Last Name" id="idlastname" ngModel
+                                            name="last_name" #reflastname="ngModel" required="required"
+                                            class="form-control form-control-lg" pattern="[A-Za-z]+"
+                                            [ngClass]="{'is-invalid': reflastname.invalid && reflastname.touched , 'is-valid':reflastname.valid}" />
+                                        <label for="idlastname" class="form-label text-danger"
+                                            *ngIf="reflastname.invalid && reflastname.touched && reflastname.errors['required']">
+                                            Enter last name</label>
+                                        <label for="idlastname" class="form-label text-danger"
+                                            *ngIf="reflastname.invalid && reflastname.touched && reflastname.errors['pattern']">
+                                            Enter valid last name</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+                                    <h6 class="mb-2">Birth Date: </h6>
+                                    <div class="form-outline datepicker w-100">
+                                        <input type="date" class="form-control form-control-lg" id="birthdayDate" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <h6 class="mb-2 pb-1">Gender: </h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="femaleGender" value="option1" checked />
+                                        <label class="form-check-label" for="femaleGender">Female</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="maleGender" value="option2" />
+                                        <label class="form-check-label" for="maleGender">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                            id="otherGender" value="option3" />
+                                        <label class="form-check-label" for="otherGender">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6  ">
+                                    <div class="form-outline">
+                                        <input ngModel id="idemail" placeholder="Email Id " type="email" name="emailid"
+                                            #refemail="ngModel" required="required" class="form-control form-control-lg"
+                                            pattern="[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+"
+                                            [ngClass]="{'is-invalid': refemail.invalid && refemail.touched , 'is-valid':refemail.valid}" />
+                                        <label for="idemail" class="form-label text-danger"
+                                            *ngIf="refemail.invalid && refemail.touched && refemail.errors['required']">
+                                            enter email id</label>
+                                        <label for="idemail" class="form-label text-danger"
+                                            *ngIf="refemail.invalid && refemail.touched && refemail.errors['pattern']">
+                                            enter valid email id</label> <br>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <div class="form-outline">
+                                        <input ngModel id="idmob" placeholder="Mobile number" type="tel" name="telino"
+                                            #refmob="ngModel" required="required" class="form-control form-control-lg"
+                                            pattern="^[1-9]{1}[0-9]{9}$"
+                                            [ngClass]="{'is-invalid': refmob.invalid && refmob.touched , 'is-valid':refmob.valid}" />
+                                        <label for="idmob" class="form-label text-danger"
+                                            *ngIf="refmob.invalid && refmob.touched && refmob.errors['required']"> enter
+                                            mobile number</label>
+                                        <label for="idmob" class="form-label text-danger"
+                                            *ngIf="refmob.invalid && refmob.touched && refmob.errors['pattern']"> enter
+                                            valid mobile number</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+                                    <h6 class="mb-2">Adhar Number: </h6>
+                                    <div class="form-outline w-100">
+                                        <input ngModel id="idadhar" type="text" name="adhar" #refadhar="ngModel"
+                                            required="required" class="form-control form-control-lg"
+                                            pattern="^[2-9]{1}[0-9]{3}\s[0-9]{4}\s[0-9]{4}$"
+                                            [ngClass]="{'is-invalid': refadhar.invalid && refadhar.touched , 
+                                            'is-valid':refadhar.valid}"
+                                            placeholder="add space after 4 digits" />
+                                        <label for="idadhar" class="form-label text-danger"
+                                            *ngIf="refadhar.invalid && refadhar.touched && refadhar.errors['required']">
+                                            enter adhar number</label>
+                                        <label for="idadhar" class="form-label text-danger"
+                                            *ngIf="refadhar.invalid && refadhar.touched && refadhar.errors['pattern']">
+                                            enter valid adhar number</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+                                    <h6 class="mb-2">Pan Number: </h6>
+                                    <div class="form-outline w-100">
+                                        <input ngModel id="idpan" type="text" name="pan" #refpan="ngModel"
+                                            required="required" class="form-control form-control-lg"
+                                            pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"
+                                            [ngClass]="{'is-invalid': refpan.invalid && refpan.touched , 'is-valid':refpan.valid}" />
+                                        <label for="idpan" class="form-label text-danger"
+                                            *ngIf="refpan.invalid && refpan.touched && refpan.errors['required']">
+                                            insert pan number</label>
+                                        <label for="idpan" class="form-label text-danger"
+                                            *ngIf="refpan.invalid && refpan.touched && refpan.errors['pattern']"> insert
+                                            valid pan number</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+                                    <h6 class="mb-2">Marital Status: </h6>
+                                    <div class="form-outline  w-100">
+                                        <select class="select form-control-lg" name="maritalstatus" ngModel
+                                            #refmaritalstatus="ngModel" id="idmaritalstatus" >
+                                            <option value="1" disabled>Choose option</option>
+                                            <option value="2">Single</option>
+                                            <option value="3">Married</option>
+                                            <option value="4">Divorced</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+                                    <h6 class="mb-2">Home Town: </h6>
+                                    <div class="form-outline  w-100">
+                                        <input type="text" name="location" #reflocation="ngModel" ngModel
+                                            id="idlocation" class="form-control form-control-lg">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="password" placeholder="Password" id="idpassword" ngModel
+                                            name="password" #refpassword="ngModel" required="required"
+                                            class="form-control form-control-lg" pattern=""
+                                            [ngClass]="{'is-invalid': refpassword.invalid && refpassword.touched , 'is-valid':refpassword.valid}" />
+                                        <label for="idpassword" class="form-label text-danger"
+                                            *ngIf="refpassword.invalid && refpassword.touched && refpassword.errors['required']">
+                                            Enter Password</label>
+                                        <!-- <label for="idfirstname" class="form-label text-danger"
+                                            *ngIf="refpassword.invalid && refpassword.touched && refpassword.errors['pattern']">
+                                            Enter valid Password</label> -->
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <input type="password" placeholder="Re-Enter Password" id="idpassword2" ngModel
+                                            name="password2" #refpassword2="ngModel" required="required"
+                                            class="form-control form-control-lg" pattern=""
+                                            [ngClass]="{'is-invalid': refpassword2.invalid && refpassword2.touched , 'is-valid':refpassword2.valid}" />
+                                        <label for="idpassword2" class="form-label text-danger"
+                                            *ngIf="refpassword2.invalid && refpassword2.touched && refpassword2.errors['required']">
+                                            Re-Enter Password</label>
+                                        <!-- <label for="idlastname" class="form-label text-danger"
+                                            *ngIf="refpassword2.invalid && refpassword2.touched && refpassword2.errors['pattern']">
+                                            Enter valid Re-Entered password</label> -->
+                                    </div>
+                                </div>
+                                <div *ngIf="refpassword.value!=refpassword2.value" class="form-label text-danger">
+                                    Password is not matching please ReEnter your Password
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-2">
+                                <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
